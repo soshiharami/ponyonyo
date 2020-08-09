@@ -9,7 +9,7 @@ import scala.concurrent.duration.Duration
 
 object ponyo extends App{
   println("test")
-  val token = "NzI3NTI5NjUzNTY0MzQyMzgz.XvtK5Q.vVWS_iq7NgJC3DGmfMq00zsP_us"
+  val token = sys.env("scala_ponyo_TOKEN")
   val clientSettings = ClientSettings(token)
   var channelId:TextChannel = _
 
