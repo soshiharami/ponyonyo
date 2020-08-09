@@ -1,26 +1,16 @@
-import ackcord._
-import ackcord.cachehandlers.CacheSnapshotBuilder
-import ackcord.data.ChannelType.GuildText
-import ackcord.data._
-import ackcord.requests._
-import ackcord.syntax._
-import ackcord.voice.AudioAPIMessage
-import java.awt.{Color, Font, RenderingHints}
-import java.awt.image.BufferedImage
-import java.io.{File, FileOutputStream}
 import java.nio.file.Paths
 
-import javax.imageio.{IIOImage, ImageIO, ImageWriteParam}
+import ackcord._
+import ackcord.data._
+import ackcord.syntax._
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
-import scala.reflect.io.{File, Path}
 
-object test_pinpon extends App{
+object ponyo extends App{
   println("test")
   val token = "NzI3NTI5NjUzNTY0MzQyMzgz.XvtK5Q.vVWS_iq7NgJC3DGmfMq00zsP_us"
   val clientSettings = ClientSettings(token)
-  import clientSettings.executionContext
   var channelId:TextChannel = _
 
   //In real code, please dont block on the client construction
