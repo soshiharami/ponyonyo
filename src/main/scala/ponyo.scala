@@ -6,6 +6,7 @@ import ackcord.syntax._
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
+import scala.util.control.Breaks.break
 
 object ponyo extends App{
   println("test")
@@ -19,6 +20,7 @@ object ponyo extends App{
   client.onEventSideEffects {
     implicit c => {
       case APIMessage.MessageCreate(message, _) =>
+        if(message.authorUser(c).get.bot.get) break
         println(message.authorUser(c).get.username + " >> " + message.content)
         channelId = c.getTextChannel(message.channelId).get
         if(message.content.containsSlice("おちんちん")){
